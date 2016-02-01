@@ -10,7 +10,7 @@ require __DIR__ . '/vendor/autoload.php';
 use JsonRPC\Client;
 
 // Create API connection
-$client = new Client('http://localhost/miniflux/jsonrpc.php');
+$client = new Client($BASE_MINIFLUX_URL.'/jsonrpc.php');
 $client->authentication('admin', $API_PASSWORD);
 
 
@@ -46,7 +46,7 @@ if (file_exists("tmp/") && is_writable("tmp/")) {
     require_once('inc/rain.tpl.class.php');
     RainTPL::$tpl_dir = "tpl/zen/";
     RainTPL::$cache_dir = "tmp/";
-    RainTPL::$base_url = "http://localhost/miniflux_api/";
+    RainTPL::$base_url = $BASE_URL;
     $tpl = new RainTPL;
     $tpl->assign('start_generation_time', microtime(true), RainTPL::RAINTPL_IGNORE_SANITIZE);
 }

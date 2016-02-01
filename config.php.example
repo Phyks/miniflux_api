@@ -1,2 +1,4 @@
 <?php
 $API_PASSWORD = "CHANGE_ME";
+$BASE_URL = "http://localhost/miniflux_api/";
+$BASE_MINIFLUX_URL = "http://localhost/miniflux/";
