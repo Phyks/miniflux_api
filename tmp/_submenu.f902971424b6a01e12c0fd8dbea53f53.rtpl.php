@@ -25,7 +25,6 @@
                 <h4 class="submenu--section-title">New feed</h4>
 				<form method="post" action="http://localhost/miniflux_api/settings.php">
 					<input type="text" name="feed_url" id="feed_url" placeholder="Feed URL" />
-					<input type="hidden" name="import_tags_add" value="<?php echo $config->import_tags_from_feeds;?>" />
 					<input type="hidden" name="feed_post" id="feed_post" value="" />
 					<input type="submit" value="Add" style="margin-top: 0; margin-bottom: 1em" />
 				</form>

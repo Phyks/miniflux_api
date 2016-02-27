@@ -9,6 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JsonRPC\Client;
 
+try {
 // Create API connection
 $client = new Client($BASE_MINIFLUX_URL.'/jsonrpc.php');
 $client->authentication('admin', $API_PASSWORD);
@@ -93,3 +94,6 @@ $tpl->assign('entries', $entries);
 $tpl->assign('feeds', $feeds);
 
 $tpl->draw('index');
+} catch (Exception $e) {
+    header("Refresh:0");
+}
