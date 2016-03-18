@@ -32,6 +32,9 @@ $feeds = $client->execute('feed.list');
 $entries = [];
 
 foreach ($feeds as $feed) {
+    if (!$feed["enabled"]) {
+        continue;
+    }
     // Update old feeds
     if (time() - $feed["last_checked"] >= 3600) {
         $client->execute('feed.update', ["feed_id"=>$feed["id"]]);
